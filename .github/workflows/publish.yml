@@ -8,11 +8,16 @@ on:
       - "content/**"
       - "templates/**"
       - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
   pull_request:
     paths:
       - "content/**"
       - "templates/**"
       - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
+  workflow_dispatch: {}
 
 jobs:
   build:
