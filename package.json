@@ -13,6 +13,8 @@
     "test": "node scripts/test.js"
   },
   "dependencies": {
-    "puppeteer": "^23.9.0"
+    "@sparticuz/chromium": "^149.0.0",
+    "puppeteer": "^23.9.0",
+    "puppeteer-core": "^25.3.0"
   }
 }
