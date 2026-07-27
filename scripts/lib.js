@@ -86,7 +86,8 @@ function getPublicationEntries(cv) {
 }
 
 function getVisibleSorted(entries) {
-  return (entries || [])
+  if (!Array.isArray(entries)) return [];
+  return entries
     .filter((entry) => !entry.hidden)
     .slice()
     .sort((a, b) => {
@@ -198,7 +199,11 @@ function validateCv(cv) {
 
   for (const section of SECTIONS) {
     const entries = cv[section.key];
-    if (!Array.isArray(entries)) continue;
+    if (entries === undefined) continue;
+    if (!Array.isArray(entries)) {
+      errors.push(`The "${section.label}" section should be a list of entries, but it isn't. Please contact the website administrator.`);
+      continue;
+    }
 
     for (const entry of entries) {
       const parsedText = section.key === "publications" ? parsePublicationText(entry.text) : null;
