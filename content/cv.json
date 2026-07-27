@@ -14,8 +14,6 @@
       "id": "6f03897b-ca4d-4373-a858-262f23e6b173",
       "degree": "PhD in Social Policy",
       "institution": "Brandeis University",
-      "year": "",
-      "details": "",
       "hidden": false,
       "sortOrder": 10
     },
@@ -23,8 +21,6 @@
       "id": "68237d46-817b-4a8b-8246-f107242dad0e",
       "degree": "MSN",
       "institution": "Boston College",
-      "year": "",
-      "details": "",
       "hidden": false,
       "sortOrder": 20
     },
@@ -32,8 +28,6 @@
       "id": "f24581cc-5a2a-43f7-ac7f-23f3b90caf1e",
       "degree": "BSN",
       "institution": "University of Portland",
-      "year": "",
-      "details": "",
       "hidden": false,
       "sortOrder": 30
     }
@@ -45,7 +39,6 @@
       "institution": "Columbia University School of Nursing",
       "startYear": "2024",
       "endYear": "Present",
-      "details": "",
       "hidden": false,
       "sortOrder": 10
     }
@@ -54,8 +47,6 @@
     {
       "id": "795130ea-426e-4b1b-87af-39b73965775a",
       "text": "2026\nExample Article Title on Scope of Practice and Access to Care\nO'Reilly-Jacob, M., and Coauthor Name\nExample Journal of Health Policy\nvol. 10, no. 2, pp. 100-120",
-      "doi": "",
-      "url": "",
       "status": "Published",
       "featured": true,
       "hidden": false,
@@ -64,16 +55,12 @@
     {
       "id": "2dbe8d3c-4bef-4774-8e16-e3b2a2f15567",
       "text": "2025\nExample Forthcoming Article Title\nO'Reilly-Jacob, M.\nExample Nursing Research Journal",
-      "doi": "",
-      "url": "",
       "status": "Forthcoming",
       "featured": false,
       "hidden": false,
       "sortOrder": 20
     }
   ],
-  "books": [],
-  "chapters": [],
   "presentations": [
     {
       "id": "d7cfb49f-e89c-4bd0-bd5a-52ccd26add71",
@@ -81,15 +68,8 @@
       "event": "Example Health Policy Conference",
       "location": "Boston, MA",
       "year": "2025",
-      "details": "",
       "hidden": false,
       "sortOrder": 10
     }
-  ],
-  "grants": [],
-  "awards": [],
-  "teaching": [],
-  "service": [],
-  "media": [],
-  "other": []
+  ]
 }
