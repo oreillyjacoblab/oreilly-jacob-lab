@@ -34,13 +34,13 @@ jobs:
       - name: Validate CV data
         run: npm run validate
 
-      - name: Build HTML, Word, and PDF CV
+      - name: Build website and PDF CV
         run: npm run build
 
       - name: Run tests
         run: npm test
 
-# Generated files (cv.html, professor-cv.pdf, professor-cv.docx) are produced
+# Generated files (index.html, resources.html, professor-cv.pdf) are produced
 # here for validation only and are not committed back to the repository, to
 # avoid triggering another workflow run. Vercel runs `npm run build` again at
 # deploy time (see vercel.json) so the live site always serves fresh output.

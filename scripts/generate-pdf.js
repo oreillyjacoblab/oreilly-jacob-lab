@@ -11,7 +11,10 @@ async function generatePdf() {
   const outputPath = path.join(FILES_DIR, "professor-cv.pdf");
   fs.mkdirSync(FILES_DIR, { recursive: true });
 
-  const browser = await puppeteer.launch();
+  // --no-sandbox is required in CI containers (GitHub Actions, Vercel) where
+  // Chromium can't get a sandboxing namespace; the HTML we render is always
+  // our own generated content, never third-party input, so this is safe here.
+  const browser = await puppeteer.launch({ args: ["--no-sandbox", "--disable-setuid-sandbox"] });
   try {
     const page = await browser.newPage();
     await page.setContent(html, { waitUntil: "networkidle0" });
