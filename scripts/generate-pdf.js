@@ -12,7 +12,7 @@ const { renderCvHtml } = require("./generate-html");
  * regular Puppeteer's own bundled Chromium works fine. */
 async function launchBrowser() {
   if (process.env.VERCEL) {
-    const chromium = require("@sparticuz/chromium");
+    const chromium = require("@sparticuz/chromium").default;
     const puppeteerCore = require("puppeteer-core");
     return puppeteerCore.launch({
       args: chromium.args,
