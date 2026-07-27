@@ -10,10 +10,12 @@
     "build:pages": "node scripts/generate-pages.js",
     "build:thumbnails": "node scripts/generate-thumbnails.js",
     "build:pdf": "node scripts/generate-pdf.js",
-    "test": "node scripts/test.js"
+    "audit:cms": "node scripts/audit-pages-yml.js",
+    "test": "node scripts/test.js && npm run audit:cms"
   },
   "dependencies": {
     "@sparticuz/chromium": "^149.0.0",
+    "js-yaml": "^5.2.2",
     "puppeteer": "^23.9.0",
     "puppeteer-core": "^25.3.0"
   }
