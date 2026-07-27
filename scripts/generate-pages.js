@@ -86,6 +86,11 @@ function renderResearchTopics(site, cv) {
     .join("\n");
 }
 
+function renderProfilePhoto(profile) {
+  if (!profile.photo) return "";
+  return `<img class="profile-photo" src="${escapeHtml(profile.photo)}" alt="${escapeHtml(profile.name)}" />`;
+}
+
 function renderResourceCard(resource, thumbnailPath) {
   const ext = path.extname(resource.file || "").replace(".", "").toUpperCase() || "FILE";
   const thumbHtml = thumbnailPath
@@ -113,10 +118,14 @@ function renderResourcesList(resources, thumbnails) {
 
 function generateResourcesPage() {
   const { resources } = loadResources();
+  const site = loadSite();
   const thumbnails = generateThumbnails();
   const template = fs.readFileSync(path.join(TEMPLATES_DIR, "resources-template.html"), "utf8");
 
-  const html = template.replace("<!--RESOURCES_LIST-->", renderResourcesList(resources, thumbnails));
+  const html = template
+    .replaceAll("{{SITE_NAME}}", escapeHtml(site.site.name))
+    .replaceAll("{{FOOTER_NOTE}}", escapeHtml(site.site.footerNote))
+    .replace("<!--RESOURCES_LIST-->", renderResourcesList(resources, thumbnails));
   const outputPath = path.join(ROOT, "resources.html");
   fs.writeFileSync(outputPath, html, "utf8");
   return outputPath;
@@ -125,9 +134,23 @@ function generateResourcesPage() {
 function generateIndexPage() {
   const cv = loadCv();
   const site = loadSite();
+  const profile = cv.profile;
   const template = fs.readFileSync(path.join(TEMPLATES_DIR, "index-template.html"), "utf8");
 
   const html = template
+    .replaceAll("{{SITE_NAME}}", escapeHtml(site.site.name))
+    .replaceAll("{{FOOTER_NOTE}}", escapeHtml(site.site.footerNote))
+    .replaceAll("{{HERO_EYEBROW}}", escapeHtml(site.hero.eyebrow))
+    .replaceAll("{{HERO_TITLE}}", escapeHtml(site.hero.title))
+    .replaceAll("{{HERO_MISSION}}", escapeHtml(site.hero.mission))
+    .replaceAll("{{PROFILE_NAME}}", escapeHtml(profile.name))
+    .replaceAll("{{PROFILE_TITLE}}", escapeHtml(profile.title))
+    .replaceAll("{{PROFILE_INSTITUTION}}", escapeHtml(profile.institution))
+    .replaceAll("{{PROFILE_OFFICE}}", escapeHtml(profile.office))
+    .replaceAll("{{PROFILE_PHONE}}", escapeHtml(profile.phone || ""))
+    .replaceAll("{{PROFILE_EMAIL}}", escapeHtml(profile.email))
+    .replaceAll("{{PROFILE_BIO}}", escapeHtml(profile.bio || ""))
+    .replace("<!--PROFILE_PHOTO-->", renderProfilePhoto(profile))
     .replace("<!--RESEARCH_TOPICS-->", renderResearchTopics(site, cv))
     .replace("<!--PUBLICATIONS_LIST-->", renderPublicationsList(cv));
   const outputPath = path.join(ROOT, "index.html");

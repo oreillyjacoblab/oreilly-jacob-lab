@@ -359,6 +359,18 @@ main > .section:first-child {
   .people-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* Profile photo (About section) */
+
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  float: left;
+  margin: 0 20px 12px 0;
+}
+
 /* Publication / list rows */
 
 .pub-list {

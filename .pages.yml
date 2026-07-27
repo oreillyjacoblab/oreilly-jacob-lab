@@ -17,8 +17,11 @@ content:
           - { name: title, label: Academic Title, type: string }
           - { name: institution, label: Institution, type: string }
           - { name: email, label: Email, type: string }
+          - { name: phone, label: Phone, type: string, required: false }
           - { name: office, label: Office Location, type: string }
           - { name: website, label: Personal Website, type: string, required: false }
+          - { name: photo, label: Photo, type: image, required: false }
+          - { name: bio, label: Biography, type: text, description: "Shown on the About section of the website." }
 
       - name: education
         label: Education
@@ -183,32 +186,37 @@ content:
     path: content/site.json
     format: json
     fields:
-      - name: profile
-        label: Profile
-        type: object
-        fields:
-          - { name: name, label: Full Name, type: string }
-          - { name: title, label: Academic Title, type: string }
-          - { name: institution, label: Institution, type: string }
-          - { name: department, label: Department, type: string, required: false }
-          - { name: email, label: Email, type: string }
-          - { name: office, label: Office Location, type: string, required: false }
-          - { name: photo, label: Photo, type: image, required: false }
-
       - name: site
         label: Site
         type: object
         fields:
           - { name: name, label: Website Name, type: string }
-          - { name: tagline, label: Tagline, type: string }
           - { name: footerNote, label: Footer Text, type: string }
 
-      - name: home
-        label: Homepage Content
+      - name: hero
+        label: Homepage Introduction
         type: object
+        description: "The large text at the top of the homepage."
         fields:
-          - { name: researchSummary, label: Research Summary, type: text }
-          - { name: currentProjects, label: Current Projects, type: string, list: true }
+          - { name: eyebrow, label: Small Label Above the Headline, type: string }
+          - { name: title, label: Headline, type: string }
+          - { name: mission, label: Description, type: text }
+
+      - name: researchTopics
+        label: Research Topics
+        type: object-list
+        description: "The three expandable research topic tiles on the homepage."
+        fields:
+          - { name: id, label: ID, type: string, description: "Do not edit. Generated automatically." }
+          - { name: icon, label: Icon, type: select, options: [{ label: "Circle", value: circle }, { label: "Trend Line", value: trend }, { label: "Cluster of Dots", value: cluster }] }
+          - { name: label, label: Small Category Label, type: string }
+          - { name: question, label: Question (shown on the tile), type: string }
+          - { name: blurb, label: Description (shown when expanded), type: text }
+          - name: publicationIds
+            label: Featured Publication IDs
+            type: string
+            list: true
+            description: "Paste the ID of each Journal Article/Book/Chapter to show here when this tile is expanded. Find an entry's ID at the top of its editing form."
 
   - name: resources
     label: Resources
