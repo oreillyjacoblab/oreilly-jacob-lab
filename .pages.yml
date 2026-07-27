@@ -1,6 +1,10 @@
 media:
-  input: assets/images
-  output: /assets/images
+  - name: images
+    input: assets/images
+    output: /assets/images
+  - name: resources
+    input: assets/files/resources
+    output: /assets/files/resources
 
 content:
   - name: cv
@@ -31,7 +35,7 @@ content:
             collapsed: true
             summary: "{degree}"
         fields:
-          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
+          - { name: id, label: ID, type: uuid, readonly: true, options: { generate: false } }
           - { name: degree, label: Degree, type: string }
           - { name: institution, label: Institution, type: string }
           - { name: year, label: Year, type: string }
@@ -47,7 +51,7 @@ content:
             collapsed: true
             summary: "{title}"
         fields:
-          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
+          - { name: id, label: ID, type: uuid, readonly: true, options: { generate: false } }
           - { name: title, label: Title, type: string }
           - { name: institution, label: Institution, type: string }
           - { name: startYear, label: Start Year, type: string }
@@ -64,13 +68,17 @@ content:
             collapsed: true
             summary: "{title}"
         fields:
-          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
+          - { name: id, label: ID, type: uuid, readonly: true, options: { generate: false } }
           - { name: title, label: Title, type: string }
           - { name: authors, label: Authors, type: string }
           - { name: publisher, label: Publisher, type: string, required: false }
           - { name: year, label: Year, type: string, required: false }
           - { name: url, label: Web Link, type: string, required: false }
-          - { name: status, label: Publication Status, type: select, options: ["Published", "Forthcoming", "In Press", "Accepted", "Under Review", "In Preparation", "Working Paper"] }
+          - name: status
+            label: Publication Status
+            type: select
+            options:
+              values: ["Published", "Forthcoming", "In Press", "Accepted", "Under Review", "In Preparation", "Working Paper"]
           - { name: featured, label: Featured Item, type: boolean, default: false }
           - { name: hidden, label: Hide This Entry, type: boolean, default: false }
           - { name: sortOrder, label: Sort Order, type: number, default: 100 }
@@ -83,14 +91,18 @@ content:
             collapsed: true
             summary: "{title}"
         fields:
-          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
+          - { name: id, label: ID, type: uuid, readonly: true, options: { generate: false } }
           - { name: title, label: Chapter Title, type: string }
           - { name: authors, label: Authors, type: string }
           - { name: journal, label: Book Title, type: string }
           - { name: pages, label: Page Range, type: string, required: false }
           - { name: year, label: Year, type: string, required: false }
           - { name: url, label: Web Link, type: string, required: false }
-          - { name: status, label: Publication Status, type: select, options: ["Published", "Forthcoming", "In Press", "Accepted", "Under Review", "In Preparation", "Working Paper"] }
+          - name: status
+            label: Publication Status
+            type: select
+            options:
+              values: ["Published", "Forthcoming", "In Press", "Accepted", "Under Review", "In Preparation", "Working Paper"]
           - { name: featured, label: Featured Item, type: boolean, default: false }
           - { name: hidden, label: Hide This Entry, type: boolean, default: false }
           - { name: sortOrder, label: Sort Order, type: number, default: 100 }
@@ -103,7 +115,7 @@ content:
             collapsed: true
             summary: "{text}"
         fields:
-          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
+          - { name: id, label: ID, type: uuid, readonly: true, options: { generate: false } }
           - name: text
             label: Publication Details
             type: text
@@ -112,7 +124,11 @@ content:
               additional notes (volume, pages, etc. — optional).
           - { name: doi, label: DOI, type: string, required: false }
           - { name: url, label: Web Link, type: string, required: false }
-          - { name: status, label: Publication Status, type: select, options: ["Published", "Forthcoming", "In Press", "Accepted", "Under Review", "In Preparation", "Working Paper"] }
+          - name: status
+            label: Publication Status
+            type: select
+            options:
+              values: ["Published", "Forthcoming", "In Press", "Accepted", "Under Review", "In Preparation", "Working Paper"]
           - { name: featured, label: Featured Item, type: boolean, default: false }
           - { name: hidden, label: Hide This Entry, type: boolean, default: false }
           - { name: sortOrder, label: Sort Order, type: number, default: 100 }
@@ -125,7 +141,7 @@ content:
             collapsed: true
             summary: "{title}"
         fields:
-          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
+          - { name: id, label: ID, type: uuid, readonly: true, options: { generate: false } }
           - { name: title, label: Title, type: string }
           - { name: event, label: Event Name, type: string }
           - { name: location, label: Location, type: string, required: false }
@@ -142,7 +158,7 @@ content:
             collapsed: true
             summary: "{title}"
         fields:
-          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
+          - { name: id, label: ID, type: uuid, readonly: true, options: { generate: false } }
           - { name: title, label: Title, type: string }
           - { name: organization, label: Funding Organization, type: string, required: false }
           - { name: year, label: Year, type: string, required: false }
@@ -158,7 +174,7 @@ content:
             collapsed: true
             summary: "{title}"
         fields:
-          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
+          - { name: id, label: ID, type: uuid, readonly: true, options: { generate: false } }
           - { name: title, label: Title, type: string }
           - { name: organization, label: Awarding Organization, type: string, required: false }
           - { name: year, label: Year, type: string, required: false }
@@ -174,7 +190,7 @@ content:
             collapsed: true
             summary: "{course}"
         fields:
-          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
+          - { name: id, label: ID, type: uuid, readonly: true, options: { generate: false } }
           - { name: course, label: Course Title, type: string }
           - { name: institution, label: Institution, type: string }
           - { name: years, label: Years Taught, type: string, required: false }
@@ -190,7 +206,7 @@ content:
             collapsed: true
             summary: "{title}"
         fields:
-          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
+          - { name: id, label: ID, type: uuid, readonly: true, options: { generate: false } }
           - { name: title, label: Role or Activity, type: string }
           - { name: organization, label: Organization, type: string, required: false }
           - { name: year, label: Year, type: string, required: false }
@@ -206,7 +222,7 @@ content:
             collapsed: true
             summary: "{title}"
         fields:
-          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
+          - { name: id, label: ID, type: uuid, readonly: true, options: { generate: false } }
           - { name: title, label: Title, type: string }
           - { name: organization, label: Outlet, type: string, required: false }
           - { name: year, label: Year, type: string, required: false }
@@ -222,7 +238,7 @@ content:
             collapsed: true
             summary: "{title}"
         fields:
-          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
+          - { name: id, label: ID, type: uuid, readonly: true, options: { generate: false } }
           - { name: title, label: Title, type: string }
           - { name: details, label: Notes, type: text, required: false }
           - { name: hidden, label: Hide This Entry, type: boolean, default: false }
@@ -259,8 +275,15 @@ content:
             summary: "{label}"
         description: "The three expandable research topic tiles on the homepage."
         fields:
-          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
-          - { name: icon, label: Icon, type: select, options: [{ label: "Circle", value: circle }, { label: "Trend Line", value: trend }, { label: "Cluster of Dots", value: cluster }] }
+          - { name: id, label: ID, type: uuid, readonly: true, options: { generate: false } }
+          - name: icon
+            label: Icon
+            type: select
+            options:
+              values:
+                - { label: "Circle", value: circle }
+                - { label: "Trend Line", value: trend }
+                - { label: "Cluster of Dots", value: cluster }
           - { name: label, label: Small Category Label, type: string }
           - { name: question, label: Question (shown on the tile), type: string }
           - { name: blurb, label: Description (shown when expanded), type: text }
@@ -284,14 +307,13 @@ content:
             collapsed: true
             summary: "{title}"
         fields:
-          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
+          - { name: id, label: ID, type: uuid, readonly: true, options: { generate: false } }
           - { name: title, label: Title, type: string }
           - { name: description, label: Short Description, type: text }
           - name: file
             label: Document
             type: file
-            media:
-              input: assets/files/resources
-              output: /assets/files/resources
+            options:
+              media: resources
           - { name: hidden, label: Hide This Item, type: boolean, default: false }
           - { name: sortOrder, label: Sort Order, type: number, default: 100 }
