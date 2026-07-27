@@ -1,0 +1,896 @@
+Project Specification: Professor Research Website with Simple CV Publishing System
+
+PROJECT GOAL
+
+Build a professional academic research website for a college professor.
+
+The public website should be built with standard HTML, CSS, and JavaScript. It should be easy to host using GitHub and Vercel or another static hosting provider.
+
+The professor is not technically sophisticated. She should never need to:
+
+- edit HTML
+- edit CSS
+- edit JSON or YAML
+- use Git
+- use GitHub directly
+- use a command line
+- run a build script
+- manually upload files
+- understand how the website is hosted
+
+Her normal workflow should be:
+
+1. Open a bookmarked website editor.
+2. Log in.
+3. Edit her CV through simple forms.
+4. Click Save or Publish.
+5. The website, PDF CV, and Word CV update automatically.
+
+The developer may build and test everything on a separate computer first. Once deployed, the professor should only need a browser and a bookmark to the editing interface.
+
+
+CORE REQUIREMENTS
+
+The system must maintain one master source of CV information and generate three outputs from it:
+
+1. An HTML version displayed on the public website.
+2. A downloadable PDF version.
+3. A downloadable Microsoft Word .docx version.
+
+The three versions must be generated from the same source so they do not drift apart.
+
+The professor should not separately edit the HTML, PDF, and Word versions.
+
+
+RECOMMENDED ARCHITECTURE
+
+Use the following architecture unless there is a strong technical reason to choose another approach:
+
+- Plain HTML, CSS, and JavaScript for the public website
+- GitHub repository for version control and file storage
+- Pages CMS or another simple Git-backed content editor for the professor
+- Structured CV data stored in JSON, YAML, or Markdown front matter
+- A build script that generates HTML, PDF, and Word versions
+- GitHub Actions for automated builds
+- Vercel for deployment
+- Pandoc, Quarto, or another reliable document-generation tool for producing .docx and .pdf
+
+The professor should interact only with the content editor.
+
+
+USER ROLES
+
+Professor
+
+The professor should be able to:
+
+- log in through a browser
+- edit personal information
+- edit research interests
+- add, edit, delete, and reorder CV entries
+- save drafts
+- publish updates
+- download the latest Word CV
+- download the latest PDF CV
+- preview the HTML CV
+- see whether publishing succeeded
+
+She should not have access to developer-oriented controls unless necessary.
+
+Developer or Administrator
+
+The developer should be able to:
+
+- edit the HTML, CSS, and JavaScript
+- modify templates
+- manage the GitHub repository
+- update the build scripts
+- control deployment
+- troubleshoot failed builds
+- maintain the CMS configuration
+- customize the appearance of the generated CV documents
+
+
+PUBLIC WEBSITE
+
+Create a clean, professional, responsive academic website.
+
+Suggested pages:
+
+- Home
+- About
+- Research
+- Publications
+- Teaching
+- Students or Lab
+- News
+- CV
+- Contact
+
+The exact page list should be easy to modify later.
+
+The public site should work well on:
+
+- desktop computers
+- laptops
+- tablets
+- phones
+
+Use semantic HTML and accessible navigation.
+
+Avoid unnecessary frameworks unless they provide a clear advantage.
+
+
+SUGGESTED REPOSITORY STRUCTURE
+
+research-website/
+├── index.html
+├── about.html
+├── research.html
+├── publications.html
+├── teaching.html
+├── cv.html
+├── contact.html
+│
+├── assets/
+│   ├── css/
+│   │   └── styles.css
+│   ├── js/
+│   │   ├── site.js
+│   │   └── cv-renderer.js
+│   ├── images/
+│   └── files/
+│       ├── professor-cv.pdf
+│       └── professor-cv.docx
+│
+├── content/
+│   ├── site.json
+│   └── cv.json
+│
+├── templates/
+│   ├── cv-template.html
+│   ├── cv-template.docx
+│   └── cv-template.tex
+│
+├── scripts/
+│   ├── build-cv.js
+│   ├── generate-html.js
+│   ├── generate-docx.js
+│   └── generate-pdf.js
+│
+├── .github/
+│   └── workflows/
+│       └── publish.yml
+│
+├── .pages.yml
+├── package.json
+└── README.md
+
+The final structure may differ, but it should remain understandable and well documented.
+
+
+MASTER CV DATA
+
+Store CV information in structured data.
+
+JSON is acceptable and may be easiest to use with plain JavaScript.
+
+Example:
+
+{
+  "profile": {
+    "name": "Professor Name",
+    "title": "Professor of Example Studies",
+    "institution": "Example College",
+    "email": "professor@example.edu",
+    "office": "Building 100",
+    "website": "https://example.com"
+  },
+  "education": [
+    {
+      "degree": "Ph.D. in Example Studies",
+      "institution": "Example University",
+      "year": "2010",
+      "details": ""
+    }
+  ],
+  "appointments": [
+    {
+      "title": "Professor",
+      "institution": "Example College",
+      "startYear": "2020",
+      "endYear": "Present",
+      "details": ""
+    }
+  ],
+  "publications": [
+    {
+      "type": "Journal Article",
+      "authors": "Professor Name and Coauthor Name",
+      "title": "Example Article Title",
+      "journal": "Example Journal",
+      "volume": "10",
+      "issue": "2",
+      "pages": "100-120",
+      "year": "2026",
+      "doi": "",
+      "url": "",
+      "status": "Published",
+      "featured": false
+    }
+  ],
+  "books": [],
+  "chapters": [],
+  "presentations": [],
+  "grants": [],
+  "awards": [],
+  "teaching": [],
+  "service": [],
+  "media": [],
+  "other": []
+}
+
+The data model should be easy to extend without rewriting the entire application.
+
+
+CMS EDITING EXPERIENCE
+
+Use Pages CMS if practical.
+
+Configure the CMS so the professor sees human-friendly labels and forms rather than raw data.
+
+Suggested CMS sections:
+
+- Profile
+- Education
+- Academic Appointments
+- Books
+- Journal Articles
+- Book Chapters
+- Reviews
+- Presentations
+- Invited Talks
+- Grants
+- Awards
+- Teaching
+- Advising
+- Professional Service
+- Media
+- Additional Information
+
+Each section should support appropriate field types.
+
+Example publication form:
+
+Title
+Authors
+Publication Type
+Journal or Publisher
+Volume
+Issue
+Page Range
+Year
+DOI
+Web Link
+Publication Status
+Featured Item
+Notes
+
+The professor should be able to:
+
+- add an entry
+- edit an entry
+- remove an entry
+- duplicate an entry
+- move entries up and down
+- reorder entries by drag and drop, if supported
+- mark entries as hidden
+- mark entries as featured
+- save changes without understanding the underlying file
+
+Use plain-language labels.
+
+Avoid technical terms such as:
+
+- commit
+- repository
+- branch
+- YAML
+- front matter
+- deployment
+- build pipeline
+
+If Pages CMS exposes unavoidable technical terms, minimize them through configuration and documentation.
+
+
+PUBLISHING WORKFLOW
+
+The desired publishing workflow is:
+
+1. The professor opens a bookmark such as:
+   https://app.pagescms.org
+
+2. She logs in.
+
+3. She selects "CV."
+
+4. She edits one or more entries.
+
+5. She clicks Save or Publish.
+
+6. Pages CMS updates the master CV data in GitHub.
+
+7. A GitHub Action automatically runs.
+
+8. The GitHub Action:
+   - validates the CV data
+   - generates the HTML CV
+   - generates the Word CV
+   - generates the PDF CV
+   - places the generated files in the correct public folders
+   - deploys or triggers a Vercel deployment
+
+9. The professor sees a clear success or failure message.
+
+Her entire normal process should feel like completing a web form.
+
+
+HTML CV
+
+Create a responsive and visually polished HTML CV page.
+
+Requirements:
+
+- Generate it from the master CV data.
+- Display sections in a logical academic order.
+- Support clickable links.
+- Support DOI links.
+- Support email links.
+- Support optional section hiding.
+- Support optional entry hiding.
+- Support featured entries.
+- Support chronological and reverse-chronological sorting.
+- Allow manual ordering when needed.
+- Include buttons for:
+  - Download PDF
+  - Download Word Document
+  - Print CV
+
+The print stylesheet should make the HTML page print cleanly.
+
+Example CSS:
+
+@media print {
+  nav,
+  footer,
+  .download-buttons {
+    display: none;
+  }
+
+  body {
+    font-size: 11pt;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+
+WORD CV
+
+Generate a Microsoft Word .docx file automatically.
+
+Requirements:
+
+- Use a professional academic CV format.
+- Preserve headings and section order.
+- Include clickable hyperlinks.
+- Use consistent margins, spacing, fonts, and indentation.
+- Avoid awkward page breaks.
+- Keep entries together where practical.
+- Include page numbers if appropriate.
+- Allow the document template to be customized later.
+- Ensure the resulting document opens correctly in Microsoft Word.
+
+The Word file should be usable as a normal CV document that can be:
+
+- emailed
+- downloaded
+- printed
+- submitted to colleges
+- temporarily edited in Word
+
+However, the professor should understand that permanent changes should be made through the online editor so the website and downloadable versions remain synchronized.
+
+
+PDF CV
+
+Generate a polished PDF from the same master data.
+
+Requirements:
+
+- Match the Word version closely in content.
+- Use professional typography.
+- Include working hyperlinks.
+- Prevent text from being clipped.
+- Avoid orphaned headings.
+- Avoid excessive blank space.
+- Use consistent headers and footers.
+- Include page numbers if appropriate.
+- Produce a stable PDF suitable for job applications, annual reviews, grants, and professional use.
+
+Prefer a reliable build process such as:
+
+Structured data
+    ↓
+Generated Markdown or HTML
+    ↓
+Pandoc or Quarto
+    ↓
+PDF and DOCX
+
+If PDF generation requires LaTeX, install the smallest reliable LaTeX environment practical for GitHub Actions.
+
+
+DATA VALIDATION
+
+Before publishing, validate the CV data.
+
+The build should fail clearly when required information is missing.
+
+Examples of validation rules:
+
+- Every publication must have a title.
+- Every publication must have a year or status.
+- URLs must be valid.
+- Email addresses must be valid.
+- Duplicate IDs should not be allowed.
+- Section names must be recognized.
+- Dates should use consistent formatting.
+
+Display understandable error messages.
+
+Bad error message:
+
+TypeError at build-cv.js line 42
+
+Better error message:
+
+The publication "Example Article" is missing a year.
+Please add a year or mark it as forthcoming.
+
+
+DRAFT AND PUBLICATION STATUS
+
+Support publication states such as:
+
+- Published
+- Forthcoming
+- In Press
+- Accepted
+- Under Review
+- In Preparation
+- Working Paper
+
+Allow the template to format these appropriately.
+
+Example:
+
+Professor Name. "Article Title." Example Journal. Forthcoming.
+
+
+ORDERING AND SORTING
+
+Different CV sections may require different ordering rules.
+
+Suggested defaults:
+
+- Education: reverse chronological
+- Appointments: reverse chronological
+- Publications: reverse chronological
+- Presentations: reverse chronological
+- Awards: reverse chronological
+- Teaching: grouped by institution or course
+- Service: grouped by institutional and professional service
+
+Allow a manual sort field such as:
+
+"sortOrder": 10
+
+Do not rely exclusively on year because multiple entries may share the same year.
+
+
+UNIQUE ENTRY IDS
+
+Each entry should have a stable unique ID.
+
+Example:
+
+{
+  "id": "publication-2026-example-title",
+  "title": "Example Title"
+}
+
+The ID should remain stable if the title is edited.
+
+This will help with:
+
+- editing
+- sorting
+- linking
+- preventing duplicates
+- future migrations
+
+Generate IDs automatically if the CMS supports it.
+
+
+WEBSITE DESIGN
+
+Use a restrained academic design.
+
+Suggested design characteristics:
+
+- readable typography
+- generous spacing
+- subtle colors
+- clear section headings
+- prominent professor name and title
+- simple navigation
+- no distracting animation
+- no unnecessary visual effects
+- high contrast
+- accessible font sizes
+- professional appearance
+
+Suggested homepage content:
+
+- professor name
+- academic title
+- institution
+- professional photograph
+- short research description
+- current research projects
+- selected publications
+- links to CV, publications, and contact information
+
+
+ACCESSIBILITY
+
+Follow basic accessibility standards.
+
+Requirements:
+
+- semantic HTML
+- proper heading hierarchy
+- keyboard-accessible navigation
+- visible focus states
+- descriptive link text
+- alt text for meaningful images
+- sufficient color contrast
+- labels attached to form fields
+- responsive text sizing
+- no information conveyed solely through color
+
+
+AUTHENTICATION
+
+The public site should remain public.
+
+The content editor must require authentication.
+
+Use the authentication method supported by Pages CMS or the selected CMS.
+
+The professor should have her own login.
+
+The developer may have an administrator login.
+
+Avoid requiring the professor to manage API keys, personal access tokens, or command-line credentials.
+
+
+GITHUB SETUP
+
+Create the GitHub repository under one of the following:
+
+1. The professor's GitHub account.
+2. A shared organization.
+3. A dedicated account created for the website.
+
+Preferred ownership:
+
+- The professor or shared organization owns the repository.
+- The developer has administrator access.
+- The professor has the minimum access needed for the CMS.
+- Recovery information is documented.
+- The project does not depend permanently on the developer's personal account.
+
+Create sensible branch protection if useful, but do not make the publishing workflow overly complicated.
+
+
+GITHUB ACTIONS
+
+Create a GitHub Actions workflow that runs whenever CV content changes.
+
+Suggested workflow steps:
+
+name: Build and Publish Website
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "content/**"
+      - "templates/**"
+      - "scripts/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate CV data
+        run: npm run validate
+
+      - name: Generate HTML CV
+        run: npm run build:html
+
+      - name: Generate Word CV
+        run: npm run build:docx
+
+      - name: Generate PDF CV
+        run: npm run build:pdf
+
+      - name: Run tests
+        run: npm test
+
+The exact workflow may differ depending on the hosting setup.
+
+Avoid creating an infinite loop if generated files are committed back to the repository.
+
+Possible solutions:
+
+- generate documents during deployment without committing them
+- upload generated documents as build artifacts
+- commit generated files using a separate branch
+- include generated files in the Vercel output directory
+
+Choose the simplest reliable approach.
+
+
+VERCEL DEPLOYMENT
+
+Connect the GitHub repository to Vercel.
+
+Requirements:
+
+- Deploy automatically when the main branch changes.
+- Use a custom domain if one is available.
+- Support HTTPS.
+- Use clear production and preview environments.
+- Do not require the professor to log into Vercel during normal use.
+- Ensure generated PDF and Word files are included in the deployment.
+
+The public URLs should remain stable.
+
+Example:
+
+https://professorname.com/cv
+https://professorname.com/files/professor-name-cv.pdf
+https://professorname.com/files/professor-name-cv.docx
+
+
+LOCAL DEVELOPMENT
+
+The developer should be able to build and test the entire project locally.
+
+Provide commands such as:
+
+npm install
+npm run dev
+npm run validate
+npm run build
+npm run build:html
+npm run build:docx
+npm run build:pdf
+npm test
+
+The local development server should display the website and regenerate the CV when content changes.
+
+The website should be fully buildable on the developer's computer before deployment.
+
+
+TRANSFER TO THE PROFESSOR
+
+The professor does not need a full local development environment.
+
+Do not require installation of:
+
+- Node.js
+- Git
+- GitHub Desktop
+- Pandoc
+- Quarto
+- LaTeX
+- VS Code
+- terminal tools
+
+Once the project is working, provide her with:
+
+1. A bookmark named "Update My Website."
+2. Her login information.
+3. A one-page instruction sheet.
+4. A bookmark to the public website.
+5. A bookmark to the live CV.
+6. A bookmark to the downloadable PDF, if useful.
+
+Optionally create a desktop shortcut that opens the CMS login page.
+
+
+PROFESSOR INSTRUCTION SHEET
+
+Create a short guide using plain language.
+
+Suggested wording:
+
+How to Update Your CV
+
+1. Open the bookmark called "Update My Website."
+2. Log in.
+3. Click "CV."
+4. Choose the section you want to update.
+5. Add or edit the information.
+6. Click Save.
+7. Wait for the confirmation message.
+
+Your website, PDF CV, and Word CV will update automatically.
+
+Include screenshots if practical.
+
+
+BACKUP AND RECOVERY
+
+Because all content is stored in GitHub, every change should be versioned.
+
+Requirements:
+
+- maintain a history of changes
+- allow an administrator to restore a previous version
+- protect against accidental deletion
+- document how to restore the CV data
+- ensure generated documents can always be rebuilt from the master data
+
+Optionally create a scheduled backup of the repository.
+
+
+ERROR HANDLING
+
+The professor should receive clear messages.
+
+Examples:
+
+Your changes were saved successfully.
+
+Your CV is being updated.
+
+Your website has been updated.
+
+There was a problem publishing your CV.
+Your changes were saved, but the new PDF could not be created.
+Please contact the website administrator.
+
+Do not expose stack traces or developer logs to the professor.
+
+Detailed logs should remain available to the administrator.
+
+
+OPTIONAL PREVIEW SYSTEM
+
+If practical, add a preview function.
+
+Suggested workflow:
+
+1. The professor edits the CV.
+2. She clicks Preview.
+3. A preview of the HTML CV opens.
+4. She clicks Publish.
+5. The production website updates.
+
+This is optional. Do not add it if it makes the system significantly harder to use.
+
+A single Save-and-Publish button is acceptable.
+
+
+OPTIONAL FUTURE FEATURES
+
+Design the system so these features can be added later:
+
+- multiple CV versions
+- a short CV
+- full academic CV
+- grant biosketch
+- annual activity report
+- selected-publications list
+- automatically generated publication pages
+- BibTeX import
+- ORCID integration
+- DOI lookup
+- Google Scholar links
+- institutional profile links
+- news posts
+- student profiles
+- research project pages
+- private draft entries
+- scheduled publication
+- automatic "last updated" date
+- archived CV versions by year
+
+Do not implement all of these in the first version unless they are straightforward.
+
+
+MINIMUM VIABLE PRODUCT
+
+The first working version should include:
+
+1. A responsive static website.
+2. A working CV page.
+3. Structured CV data.
+4. A simple browser-based editor.
+5. Automatic HTML generation.
+6. Automatic Word generation.
+7. Automatic PDF generation.
+8. GitHub-based version history.
+9. Automatic Vercel deployment.
+10. Stable download links.
+11. Clear documentation.
+12. A simple professor-facing workflow.
+
+
+ACCEPTANCE CRITERIA
+
+The project is complete when the following test succeeds:
+
+1. The professor opens the CMS using a browser.
+2. She logs in.
+3. She adds a new publication.
+4. She clicks Save or Publish.
+5. No technical tools are required on her laptop.
+6. The GitHub repository receives the updated CV data.
+7. The build runs automatically.
+8. The public HTML CV displays the new publication.
+9. The downloadable PDF includes the new publication.
+10. The downloadable Word document includes the new publication.
+11. All three outputs use consistent information.
+12. Existing links continue to work.
+13. The professor receives a clear confirmation.
+14. The developer can restore the previous version through GitHub history.
+
+
+IMPLEMENTATION PRIORITIES
+
+Prioritize the following in order:
+
+1. Ease of use for the professor.
+2. Reliability.
+3. A single source of truth.
+4. Simple maintenance.
+5. Professional appearance.
+6. Accessibility.
+7. Performance.
+8. Advanced features.
+
+Do not sacrifice ease of use for an elaborate technical architecture.
+
+The professor's interface should feel like a simple administrative form, while the public website should feel like a polished custom HTML/CSS/JavaScript site.

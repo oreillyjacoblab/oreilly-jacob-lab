@@ -1,0 +1,59 @@
+{
+  "profile": {
+    "name": "Monica O'Reilly-Jacob, PhD, APRN, FNP-BC, FAAN, FAANP",
+    "title": "Assistant Professor of Nursing",
+    "institution": "Columbia University School of Nursing",
+    "department": "Columbia University School of Nursing",
+    "email": "REPLACE-WITH-HER-EMAIL@cumc.columbia.edu",
+    "phone": "212-305-2862",
+    "office": "560 West 168th Street, Office 634, New York, NY 10032",
+    "photo": "assets/images/professor-photo.jpg"
+  },
+  "site": {
+    "name": "O'Reilly-Jacob Lab",
+    "tagline": "Research on nurse practitioner practice, health policy, and primary care access",
+    "footerNote": "© 2026 O'Reilly-Jacob Lab. All rights reserved."
+  },
+  "navigation": [
+    { "label": "Home", "href": "#top" },
+    { "label": "Research", "href": "#research" },
+    { "label": "Publications", "href": "#publications" },
+    { "label": "People", "href": "#people" },
+    { "label": "About", "href": "#about" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "researchTopics": [
+    {
+      "id": "scope",
+      "icon": "circle",
+      "label": "Governance & Regulation",
+      "question": "Does state scope-of-practice authority determine how NPs actually practice?",
+      "blurb": "This research area examines how state-level scope-of-practice laws shape what nurse practitioners are actually able to do in day-to-day practice, and where regulation and reality diverge.",
+      "publicationIds": ["publication-2026-example-article-title"]
+    },
+    {
+      "id": "primary-care",
+      "icon": "trend",
+      "label": "Workforce & Access",
+      "question": "Is NP workforce growth translating into better access to primary care?",
+      "blurb": "This research area tracks nurse practitioner workforce growth over time and asks whether that growth is actually closing primary care access gaps, especially in underserved communities.",
+      "publicationIds": ["publication-2025-example-forthcoming-title"]
+    },
+    {
+      "id": "new-models",
+      "icon": "cluster",
+      "label": "Care Delivery",
+      "question": "What new models of NP-led care best serve underserved communities?",
+      "blurb": "This research area evaluates emerging models of nurse-practitioner-led care delivery and their effectiveness in reaching communities that have historically had limited access to primary care.",
+      "publicationIds": []
+    }
+  ],
+  "home": {
+    "researchSummary": "Our lab studies the primary care nurse practitioner workforce, value-based payment models, and emerging models of care such as NP-owned practices and home-based primary care, using national Medicare claims analyses and statewide surveys.",
+    "currentProjects": [
+      "NP-owned practice readiness for value-based payment, funded by the American Nurses Foundation",
+      "Nurse practitioner workforce trends using national Medicare claims data",
+      "Home-based primary care delivered by nurse practitioners"
+    ]
+  }
+}
