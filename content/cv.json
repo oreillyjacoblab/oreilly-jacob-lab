@@ -41,6 +41,15 @@
       "endYear": "Present",
       "hidden": false,
       "sortOrder": 10
+    },
+    {
+      "id": "0491bbc8-4537-4754-970c-bef32c8f4ae1",
+      "title": "Assistant Professor of Nursing",
+      "institution": "Boston College",
+      "startYear": "2018",
+      "endYear": "2024",
+      "hidden": false,
+      "sortOrder": 100
     }
   ],
   "publications": [
