@@ -3,94 +3,14 @@
     "name": "Monica O'Reilly-Jacob, PhD, APRN, FNP-BC, FAAN, FAANP",
     "title": "Assistant Professor of Nursing",
     "institution": "Columbia University School of Nursing",
-    "email": "REPLACE-WITH-HER-EMAIL@cumc.columbia.edu",
+    "email": "mo2986@cumc.columbia.edu",
     "phone": "212-305-2862",
     "office": "560 West 168th Street, Office 634, New York, NY 10032",
     "website": "https://www.nursing.columbia.edu/profile/monica-k-oreilly-jacob-phd",
     "bio": "Monica O'Reilly-Jacob, PhD, APRN, FNP-BC, FAAN, FAANP, is a family nurse practitioner and nursing health services researcher at Columbia University School of Nursing. Her research examines the primary care nurse practitioner workforce, value-based payment models, and emerging models of care such as NP-owned practices and home-based primary care, drawing on national Medicare claims analyses and statewide surveys. She currently leads a multidisciplinary team studying NP-owned practice readiness for value-based payment, funded by the American Nurses Foundation."
   },
-  "education": [
-    {
-      "id": "education-2010-phd-example-university",
-      "degree": "Ph.D. in Nursing",
-      "institution": "Example University",
-      "year": "2010",
-      "details": "",
-      "hidden": false,
-      "sortOrder": 10
-    },
-    {
-      "id": "education-2004-msn-example-university",
-      "degree": "M.S.N., Family Nurse Practitioner",
-      "institution": "Example University",
-      "year": "2004",
-      "details": "",
-      "hidden": false,
-      "sortOrder": 20
-    }
-  ],
-  "appointments": [
-    {
-      "id": "appointment-2020-professor-example-college",
-      "title": "Associate Professor",
-      "institution": "Example College",
-      "startYear": "2020",
-      "endYear": "Present",
-      "details": "",
-      "hidden": false,
-      "sortOrder": 10
-    },
-    {
-      "id": "appointment-2014-assistant-professor-example-college",
-      "title": "Assistant Professor",
-      "institution": "Example College",
-      "startYear": "2014",
-      "endYear": "2020",
-      "details": "",
-      "hidden": false,
-      "sortOrder": 20
-    }
-  ],
-  "publications": [
-    {
-      "id": "publication-2026-example-article-title",
-      "text": "2026\nExample Article Title on Scope of Practice and Access to Care\nO'Reilly-Jacob, M., and Coauthor Name\nExample Journal of Health Policy\nvol. 10, no. 2, pp. 100-120",
-      "doi": "",
-      "url": "",
-      "status": "Published",
-      "featured": true,
-      "hidden": false,
-      "sortOrder": 10
-    },
-    {
-      "id": "publication-2025-example-forthcoming-title",
-      "text": "2025\nExample Forthcoming Article Title\nO'Reilly-Jacob, M.\nExample Nursing Research Journal",
-      "doi": "",
-      "url": "",
-      "status": "Forthcoming",
-      "featured": false,
-      "hidden": false,
-      "sortOrder": 20
-    }
-  ],
-  "books": [],
-  "chapters": [],
-  "presentations": [
-    {
-      "id": "presentation-2025-example-conference-talk",
-      "title": "Example Conference Talk Title",
-      "event": "Example Health Policy Conference",
-      "location": "Boston, MA",
-      "year": "2025",
-      "details": "",
-      "hidden": false,
-      "sortOrder": 10
-    }
-  ],
-  "grants": [],
-  "awards": [],
-  "teaching": [],
-  "service": [],
-  "media": [],
-  "other": []
+  "education": "PhD, Social Policy, Brandeis University\nMSN, Boston College\nBSN, University of Portland",
+  "appointments": "Assistant Professor, Columbia University",
+  "publications": "Art 1\nart 2",
+  "presentations": "Presentation 1"
 }
