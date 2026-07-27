@@ -25,9 +25,13 @@ content:
 
       - name: education
         label: Education
-        type: object-list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{degree}"
         fields:
-          - { name: id, label: ID, type: string, description: "Do not edit. Generated automatically." }
+          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
           - { name: degree, label: Degree, type: string }
           - { name: institution, label: Institution, type: string }
           - { name: year, label: Year, type: string }
@@ -37,9 +41,13 @@ content:
 
       - name: appointments
         label: Academic Appointments
-        type: object-list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
         fields:
-          - { name: id, label: ID, type: string }
+          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
           - { name: title, label: Title, type: string }
           - { name: institution, label: Institution, type: string }
           - { name: startYear, label: Start Year, type: string }
@@ -50,9 +58,13 @@ content:
 
       - name: books
         label: Books
-        type: object-list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
         fields:
-          - { name: id, label: ID, type: string }
+          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
           - { name: title, label: Title, type: string }
           - { name: authors, label: Authors, type: string }
           - { name: publisher, label: Publisher, type: string, required: false }
@@ -65,9 +77,13 @@ content:
 
       - name: chapters
         label: Book Chapters
-        type: object-list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
         fields:
-          - { name: id, label: ID, type: string }
+          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
           - { name: title, label: Chapter Title, type: string }
           - { name: authors, label: Authors, type: string }
           - { name: journal, label: Book Title, type: string }
@@ -81,9 +97,13 @@ content:
 
       - name: publications
         label: Journal Articles
-        type: object-list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{text}"
         fields:
-          - { name: id, label: ID, type: string }
+          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
           - name: text
             label: Publication Details
             type: text
@@ -99,9 +119,13 @@ content:
 
       - name: presentations
         label: Presentations
-        type: object-list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
         fields:
-          - { name: id, label: ID, type: string }
+          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
           - { name: title, label: Title, type: string }
           - { name: event, label: Event Name, type: string }
           - { name: location, label: Location, type: string, required: false }
@@ -112,9 +136,13 @@ content:
 
       - name: grants
         label: Grants
-        type: object-list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
         fields:
-          - { name: id, label: ID, type: string }
+          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
           - { name: title, label: Title, type: string }
           - { name: organization, label: Funding Organization, type: string, required: false }
           - { name: year, label: Year, type: string, required: false }
@@ -124,9 +152,13 @@ content:
 
       - name: awards
         label: Awards
-        type: object-list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
         fields:
-          - { name: id, label: ID, type: string }
+          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
           - { name: title, label: Title, type: string }
           - { name: organization, label: Awarding Organization, type: string, required: false }
           - { name: year, label: Year, type: string, required: false }
@@ -136,9 +168,13 @@ content:
 
       - name: teaching
         label: Teaching
-        type: object-list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{course}"
         fields:
-          - { name: id, label: ID, type: string }
+          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
           - { name: course, label: Course Title, type: string }
           - { name: institution, label: Institution, type: string }
           - { name: years, label: Years Taught, type: string, required: false }
@@ -148,9 +184,13 @@ content:
 
       - name: service
         label: Professional Service
-        type: object-list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
         fields:
-          - { name: id, label: ID, type: string }
+          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
           - { name: title, label: Role or Activity, type: string }
           - { name: organization, label: Organization, type: string, required: false }
           - { name: year, label: Year, type: string, required: false }
@@ -160,9 +200,13 @@ content:
 
       - name: media
         label: Media
-        type: object-list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
         fields:
-          - { name: id, label: ID, type: string }
+          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
           - { name: title, label: Title, type: string }
           - { name: organization, label: Outlet, type: string, required: false }
           - { name: year, label: Year, type: string, required: false }
@@ -172,9 +216,13 @@ content:
 
       - name: other
         label: Additional Information
-        type: object-list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
         fields:
-          - { name: id, label: ID, type: string }
+          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
           - { name: title, label: Title, type: string }
           - { name: details, label: Notes, type: text, required: false }
           - { name: hidden, label: Hide This Entry, type: boolean, default: false }
@@ -204,10 +252,14 @@ content:
 
       - name: researchTopics
         label: Research Topics
-        type: object-list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
         description: "The three expandable research topic tiles on the homepage."
         fields:
-          - { name: id, label: ID, type: string, description: "Do not edit. Generated automatically." }
+          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
           - { name: icon, label: Icon, type: select, options: [{ label: "Circle", value: circle }, { label: "Trend Line", value: trend }, { label: "Cluster of Dots", value: cluster }] }
           - { name: label, label: Small Category Label, type: string }
           - { name: question, label: Question (shown on the tile), type: string }
@@ -226,9 +278,13 @@ content:
     fields:
       - name: resources
         label: Downloadable Documents
-        type: object-list
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
         fields:
-          - { name: id, label: ID, type: string }
+          - { name: id, label: ID, type: uuid, options: { editable: false, generate: false } }
           - { name: title, label: Title, type: string }
           - { name: description, label: Short Description, type: text }
           - name: file
