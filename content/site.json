@@ -10,23 +10,23 @@
   },
   "researchTopics": [
     {
-      "id": "scope",
+      "id": "d75e4fa8-afd9-4c85-b5c0-f96cbf050d9e",
       "icon": "circle",
       "label": "Governance & Regulation",
       "question": "Does state scope-of-practice authority determine how NPs actually practice?",
       "blurb": "This research area examines how state-level scope-of-practice laws shape what nurse practitioners are actually able to do in day-to-day practice, and where regulation and reality diverge.",
-      "publicationIds": ["publication-2026-example-article-title"]
+      "publicationIds": ["795130ea-426e-4b1b-87af-39b73965775a"]
     },
     {
-      "id": "primary-care",
+      "id": "ee337909-69ac-4676-8951-8b179e0353ab",
       "icon": "trend",
       "label": "Workforce & Access",
       "question": "Is NP workforce growth translating into better access to primary care?",
       "blurb": "This research area tracks nurse practitioner workforce growth over time and asks whether that growth is actually closing primary care access gaps, especially in underserved communities.",
-      "publicationIds": ["publication-2025-example-forthcoming-title"]
+      "publicationIds": ["2dbe8d3c-4bef-4774-8e16-e3b2a2f15567"]
     },
     {
-      "id": "new-models",
+      "id": "b37974b5-04fa-4631-ab24-d586dc28ceb5",
       "icon": "cluster",
       "label": "Care Delivery",
       "question": "What new models of NP-led care best serve underserved communities?",
