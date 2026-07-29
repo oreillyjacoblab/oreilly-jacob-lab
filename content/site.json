@@ -15,7 +15,13 @@
       "label": "Governance & Regulation",
       "question": "Does state scope-of-practice authority determine how NPs actually practice?",
       "blurb": "This research area examines how state-level scope-of-practice laws shape what nurse practitioners are actually able to do in day-to-day practice, and where regulation and reality diverge.",
-      "publicationIds": ["795130ea-426e-4b1b-87af-39b73965775a"]
+      "publicationIds": [
+        "795130ea-426e-4b1b-87af-39b73965775a",
+        "2dbe8d3c-4bef-4774-8e16-e3b2a2f15567",
+        "451a2a90-4302-4c7b-aa26-dca27369041f",
+        "4d760216-c913-439f-9134-455fafbd90a4",
+        "76d31381-4920-41c9-95e5-41025205aac1"
+      ]
     },
     {
       "id": "ee337909-69ac-4676-8951-8b179e0353ab",
@@ -23,15 +29,16 @@
       "label": "Workforce & Access",
       "question": "Is NP workforce growth translating into better access to primary care?",
       "blurb": "This research area tracks nurse practitioner workforce growth over time and asks whether that growth is actually closing primary care access gaps, especially in underserved communities.",
-      "publicationIds": ["2dbe8d3c-4bef-4774-8e16-e3b2a2f15567"]
+      "publicationIds": [
+        "2dbe8d3c-4bef-4774-8e16-e3b2a2f15567"
+      ]
     },
     {
       "id": "b37974b5-04fa-4631-ab24-d586dc28ceb5",
       "icon": "cluster",
       "label": "Care Delivery",
       "question": "What new models of NP-led care best serve underserved communities?",
-      "blurb": "This research area evaluates emerging models of nurse-practitioner-led care delivery and their effectiveness in reaching communities that have historically had limited access to primary care.",
-      "publicationIds": []
+      "blurb": "This research area evaluates emerging models of nurse-practitioner-led care delivery and their effectiveness in reaching communities that have historically had limited access to primary care."
     }
   ]
 }
