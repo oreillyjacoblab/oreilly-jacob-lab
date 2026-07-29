@@ -26,7 +26,7 @@ const SECTIONS = [
 const KNOWN_SECTION_KEYS = new Set(["profile", ...SECTIONS.map((s) => s.key)]);
 
 const PUBLICATION_SECTION_KEYS = ["publications", "books", "chapters"];
-const MAX_FEATURED_PUBLICATIONS = 5;
+const MAX_FEATURED_PUBLICATIONS = 6;
 
 function loadJson(filePath) {
   const raw = fs.readFileSync(filePath, "utf8");
@@ -50,7 +50,7 @@ function loadResources() {
  * ("Authors, A. (2024). Title. Journal. 12(3): 45-67.") as a single line
  * instead, so that's parsed as a fallback rather than rejected. */
 function parseCitationSentence(text) {
-  const yearMatch = text.match(/\((\d{4})\)\.?/);
+  const yearMatch = text.match(/\((\d{4})[^)]*\)\.?/);
   if (!yearMatch) return null;
 
   const authors = text.slice(0, yearMatch.index).trim().replace(/,\s*$/, "");

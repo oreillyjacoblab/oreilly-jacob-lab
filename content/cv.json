@@ -141,6 +141,38 @@
       "featured": true,
       "hidden": false,
       "sortOrder": 5
+    },
+    {
+      "id": "a33b9ad7-dd86-4cba-ae46-b8c5aa8d3a9a",
+      "text": "Buerhaus, P., Butin, M., Fraher, E., Frogner, B., O'Reilly-Jacob, M. & Clarke, A. (2023). A stronger hospital nursing workforce can emerge post-pandemic. New England Journal of Medicine. 389(3): 200-203.",
+      "status": "Published",
+      "featured": true,
+      "hidden": false,
+      "sortOrder": 100
+    },
+    {
+      "id": "afab1417-1756-4ee4-a59e-8070a4c9acb5",
+      "text": "Poghosyan, L., Courtwright, S., Flandrick, K., Pollifrone, M., Schlak, A., O'Reilly-Jacob, M., Carthon Brooks, M., Hittle Gigli, K., Porat-Dahlerbruch, J., Alexander, G., Brom, H., Maier, C., Ferrara, S. & Martsolf, G. (2023). Advancement of research on nurse practitioners: Setting a research agenda. Nursing Outlook, 71(5), 101981.",
+      "status": "Published",
+      "featured": true,
+      "hidden": false,
+      "sortOrder": 100
+    },
+    {
+      "id": "67ac4980-b909-419c-ab7b-33c84bf98f5d",
+      "text": "O'Reilly-Jacob, M. & Rambur, B. (2023). Value-informed advanced practice nursing care: A key strategy to advance health equity. Nursing Outlook, 71(3): 101981.",
+      "status": "Published",
+      "featured": true,
+      "hidden": false,
+      "sortOrder": 100
+    },
+    {
+      "id": "987efbb6-3e61-4ef9-9382-0661b2ce9858",
+      "text": "O'Reilly-Jacob, M. (2020). Editorial: The murky waters of nurse practitioners & Medicare claims. Medical Care. 58(10): 851-852.",
+      "status": "Published",
+      "featured": true,
+      "hidden": false,
+      "sortOrder": 100
     }
   ]
 }

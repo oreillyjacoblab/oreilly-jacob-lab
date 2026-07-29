@@ -47,7 +47,7 @@ function renderPublicationsList(cv) {
   );
   return featured.length
     ? featured.map((entry) => renderPublicationRow(entry.__sectionKey, entry)).join("\n")
-    : '\n      <p class="empty-note">No publications featured yet. Mark up to five as "Featured" through the website editor to show them here.</p>';
+    : '\n      <p class="empty-note">No publications featured yet. Mark up to six as "Featured" through the website editor to show them here.</p>';
 }
 
 function renderResearchTopics(site, cv) {
