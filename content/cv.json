@@ -99,16 +99,5 @@
       "hidden": false,
       "sortOrder": 100
     }
-  ],
-  "presentations": [
-    {
-      "id": "d7cfb49f-e89c-4bd0-bd5a-52ccd26add71",
-      "title": "Example Conference Talk Title",
-      "event": "Example Health Policy Conference",
-      "location": "Boston, MA",
-      "year": "2025",
-      "hidden": false,
-      "sortOrder": 10
-    }
   ]
 }
