@@ -125,6 +125,15 @@
       "featured": false,
       "hidden": false,
       "sortOrder": 100
+    },
+    {
+      "id": "bc773b5e-982e-4c81-8f85-d5b82b3e3b7d",
+      "text": "O’Reilly-Jacob, M., Featherston, K. & Poghosyan, L. (2025, Aug 5). Harnessing the capacity of nurse practitioners to increase access to primary care in disadvantaged communities. Milbank Memorial Fund Blog. ",
+      "url": "https://www.milbank.org/2025/08/harnessing-the-capacity-of-nurse-practitioners-to-increase-access-to-primary-care-in-disadvantaged-communities/",
+      "status": "Published",
+      "featured": true,
+      "hidden": false,
+      "sortOrder": 100
     }
   ]
 }
