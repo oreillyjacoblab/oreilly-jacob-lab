@@ -133,7 +133,14 @@
       "status": "Published",
       "featured": true,
       "hidden": false,
-      "sortOrder": 100
+      "sortOrder": 2
+    },
+    {
+      "id": "5a1d2aed-c0bd-4e87-9ab4-4233c32c7b8c",
+      "text": "O’Reilly-Jacob, M., Rambur, B., McMichael, B. & Perloff, J. (2026). Revitalizing primary care through nurse practitioner innovation. JAMA-Health Forum. 7(1):e256200. ",
+      "featured": true,
+      "hidden": false,
+      "sortOrder": 5
     }
   ]
 }
