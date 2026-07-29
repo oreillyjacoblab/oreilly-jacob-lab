@@ -55,7 +55,7 @@ function parseCitationSentence(text) {
 
   const authors = text.slice(0, yearMatch.index).trim().replace(/,\s*$/, "");
   const remainder = text.slice(yearMatch.index + yearMatch[0].length).trim();
-  const segments = remainder.split(". ").map((s) => s.trim()).filter(Boolean);
+  const segments = remainder.split(/(?<=[.?])\s+/).map((s) => s.trim()).filter(Boolean);
   if (segments.length === 0) return null;
 
   const title = segments[0].replace(/\.$/, "");

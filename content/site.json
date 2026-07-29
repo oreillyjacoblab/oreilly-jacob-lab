@@ -41,7 +41,13 @@
       "icon": "cluster",
       "label": "Care Delivery",
       "question": "How do emerging models of NP-led primary care impact patient outcomes?",
-      "blurb": "This research area evaluates emerging models of nurse-practitioner-led care delivery and their effectiveness in reaching communities that have historically had limited access to primary care."
+      "blurb": "This research area evaluates emerging models of nurse-practitioner-led care delivery and their effectiveness in reaching communities that have historically had limited access to primary care.",
+      "publicationIds": [
+        "fd974ba8-0ab4-4af1-8809-e1ea0cfe07ec",
+        "b738c7b1-b37f-4ca8-9a6c-8403c0f0e81d",
+        "5f11fb6d-8ce4-4423-8df2-8b8a5a131199",
+        "786943d5-25c4-4aa7-afd2-f44d80da2898"
+      ]
     }
   ]
 }

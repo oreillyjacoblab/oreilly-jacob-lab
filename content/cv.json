@@ -173,6 +173,38 @@
       "featured": true,
       "hidden": false,
       "sortOrder": 100
+    },
+    {
+      "id": "fd974ba8-0ab4-4af1-8809-e1ea0cfe07ec",
+      "text": "O'Reilly-Jacob, M., Horton, M., Ji, X., Clevenger, C., Borson, S., Poghosyan, S. & Liu, J. (2026). Who provides home-based primary care to people living with dementia? Journal of Gerontological Nursing, 52(6):12-20.",
+      "status": "Published",
+      "featured": false,
+      "hidden": false,
+      "sortOrder": 100
+    },
+    {
+      "id": "b738c7b1-b37f-4ca8-9a6c-8403c0f0e81d",
+      "text": "Perloff, J., Hoyt, A., Srinivasan, M., Alvarez, M. & O'Reilly-Jacob, M. (2024). The quality of home-based primary care delivered by nurse practitioners: A national Medicare claims analysis. Journal of the American Geriatrics Society. 72(12): 3763-3772.",
+      "status": "Published",
+      "featured": false,
+      "hidden": false,
+      "sortOrder": 100
+    },
+    {
+      "id": "5f11fb6d-8ce4-4423-8df2-8b8a5a131199",
+      "text": "O'Reilly-Jacob, M., Perloff, J., Srinivasan, M., Alvarez, M. & Hoyt, A. (2023). State variation in the utilization of nurse practitioner provided home-based primary care: A Medicare claims analysis. Journal of Gerontological Nursing, 49(5):11-17.",
+      "status": "Published",
+      "featured": false,
+      "hidden": false,
+      "sortOrder": 100
+    },
+    {
+      "id": "786943d5-25c4-4aa7-afd2-f44d80da2898",
+      "text": "O'Reilly-Jacob, M., Perloff, J., Bock, L. & Berkowitz, S. (2021). Nurse practitioner owner & value-based payment. Journal of American Association of Nurse Practitioners. 34(2): 322-327.",
+      "status": "Published",
+      "featured": false,
+      "hidden": false,
+      "sortOrder": 100
     }
   ]
 }
