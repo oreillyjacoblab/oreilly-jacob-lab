@@ -45,10 +45,25 @@ function loadResources() {
   return loadJson(path.join(CONTENT_DIR, "resources.json"));
 }
 
-/** Publications are entered as one plain-text box instead of separate form
- * fields: line 1 is the year, line 2 the title, line 3 the authors, line 4
- * the journal, and any remaining lines are additional notes. Blank lines are
- * ignored so pasted or loosely-formatted text still parses. */
+/** Preferred format is one field per line: year, title, authors, journal,
+ * then optional notes. But people naturally paste a standard citation
+ * ("Authors, A. (2024). Title. Journal. 12(3): 45-67.") as a single line
+ * instead, so that's parsed as a fallback rather than rejected. */
+function parseCitationSentence(text) {
+  const yearMatch = text.match(/\((\d{4})\)\.?/);
+  if (!yearMatch) return null;
+
+  const authors = text.slice(0, yearMatch.index).trim().replace(/,\s*$/, "");
+  const remainder = text.slice(yearMatch.index + yearMatch[0].length).trim();
+  const segments = remainder.split(". ").map((s) => s.trim()).filter(Boolean);
+  if (segments.length === 0) return null;
+
+  const title = segments[0].replace(/\.$/, "");
+  const journal = segments[1] || "";
+  const notes = segments.slice(2).join(". ");
+  return { year: yearMatch[1], title, authors, journal, notes };
+}
+
 function parsePublicationText(rawText) {
   const lines = String(rawText || "")
     .split("\n")
@@ -56,6 +71,13 @@ function parsePublicationText(rawText) {
     .filter((line) => line.length > 0);
 
   const [year = "", title = "", authors = "", journal = "", ...rest] = lines;
+  const looksLikeLineFormat = /^\d{4}$/.test(year) && title.length > 0;
+
+  if (!looksLikeLineFormat) {
+    const asCitation = parseCitationSentence(lines.join(" "));
+    if (asCitation) return asCitation;
+  }
+
   return { year, title, authors, journal, notes: rest.join(" ") };
 }
 
