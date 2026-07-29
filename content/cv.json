@@ -93,6 +93,38 @@
       "featured": false,
       "hidden": false,
       "sortOrder": 100
+    },
+    {
+      "id": "8499e7dc-66d6-46a8-908b-c6616505bd3b",
+      "text": "O’Reilly-Jacob, M., Kelly-Weeder, S., Clarke, S. Poghosyan, L. & Auerbach, D. (2026).  Workforce projections for physicians, nurse practitioners and physician associates. Health Affairs. 45(7): 814-818.  ",
+      "status": "Published",
+      "featured": false,
+      "hidden": false,
+      "sortOrder": 100
+    },
+    {
+      "id": "3c0ea661-db75-4c5b-9d40-c9b089c4f613",
+      "text": "Croke, B. & O’Reilly-Jacob, M. (2025). Policy Options to Improve the Retention of Nurse Practitioners in Primary Care. Nursing Economics. 43(6), 268-276, 294",
+      "status": "Published",
+      "featured": false,
+      "hidden": false,
+      "sortOrder": 100
+    },
+    {
+      "id": "be3536c5-1a8b-40ea-bd8a-e6b2310dc2e3",
+      "text": "O’Reilly-Jacob, M., Featherston, K., Barnes, H., Xue, Y. & Poghosyan, L. (2025).  Socioeconomic characteristics of communities with primary care practices with nurse practitioners. JAMA-Network Open. 8(2): e2462360. ",
+      "status": "Published",
+      "featured": false,
+      "hidden": false,
+      "sortOrder": 100
+    },
+    {
+      "id": "7398ee43-c427-44e2-96cf-a7b0f71986c3",
+      "text": "O’Reilly-Jacob, M, Chapman, J., Subbiah, SV. & Perloff, J. (2023). Estimating the primary care workforce in Medicare claims using an activity-based approach. The Journal of General Internal Medicine, 38(13), 2898-2905. ",
+      "status": "Published",
+      "featured": false,
+      "hidden": false,
+      "sortOrder": 100
     }
   ]
 }
